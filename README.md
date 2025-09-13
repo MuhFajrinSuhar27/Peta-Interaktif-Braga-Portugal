@@ -5,6 +5,6 @@ This project was created to fulfill the requirements for the Geographic Informat
 
 ## Team Members
 - Restu Ahmadinata
-- Muh Ilham Kurniawan
+- Ilham Kurniawan
 - Muh Fajrin Suhar
 - Arelio Junara Palinoan
