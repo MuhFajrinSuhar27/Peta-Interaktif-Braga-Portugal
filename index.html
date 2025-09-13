@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peta SIG Braga</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css" />
+    
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Header Modern -->
+    <div class="main-header">
+        <img src="img/unhas1.png" class="header-logo" alt="Logo Peta">
+        <div class="header-text">
+            <h1 class="header-title">PETA INTERAKTIF BRAGA</h1>
+            <p class="header-subtitle">Sistem Informasi Geografis untuk visualisasi wilayah Braga lengkap dengan fasilitas</p>
+        </div>
+
+        <div class="header-actions">    
+        </div>
+    </div>
+    
+
+    <div id="control-panel">
+        <div class="panel-header">
+            <img src="img/portugal.jpg" class="header-flag-icon" alt="Bendera"> <h2>Kontrol Navigasi</h2> <p>Kelola tampilan peta dan pencarian data lokasi</p>
+        </div>
+        
+        <div class="search-section">
+            <div class="section-title"> <i class="fas fa-search"></i> Pencarian Fitur</div>
+            <div class="section-description"><p>Temukan lokasi spesifik berdasarkan nama pada layer yang dipilih. Gunakan kata kunci yang relevan untuk hasil yang lebih akurat.</p></div>
+            
+            <select id="layer-select">
+                <option value="batas_kota">🏛️ Batas Kota</option>
+                <option value="batas">🗺️ Batas Wilayah</option>
+                <option value="jalan">🛣️ Jalan</option>
+                <option value="bangunan">🏢 Bangunan</option>
+                <option value="sungai">🌊 Sungai</option>
+            </select>
+
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Masukkan nama lokasi (contoh: Via Dago)...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="status-indicator active">
+                <i class="fas fa-circle"></i>
+                Sistem pencarian aktif
+            </div>
+
+            <button id="reset-search" class="button-reset">
+                <i class="fas fa-redo"></i> Reset Pencarian
+            </button>
+            
+            <div id="search-results" class="search-results"></div>
+        </div>
+        
+        <div class="info-section">
+            <div class="section-title">
+                <i class="fas fa-info-circle"></i> Panduan Penggunaan
+            </div>
+            <div class="info-text">
+                <p><strong>🖱️ Interaksi Peta:</strong> Klik pada area, jalan, atau bangunan di peta untuk melihat informasi detailnya dalam popup yang informatif</p>
+                <p><strong>📋 Layer Control:</strong> Gunakan menu layer di pojok kanan atas untuk mengganti jenis peta dasar dan menampilkan/menyembunyikan data overlay</p>
+                <p><strong>✨ Highlight Effect:</strong> Arahkan kursor mouse ke batas kota atau wilayah untuk melihat efek highlight yang responsif</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Peta Interaktif Braga - Dikembangkan dengan Kelompok3.js</p>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
